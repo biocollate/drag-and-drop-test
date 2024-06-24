@@ -1,84 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>My Drag-and-Drop Example</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+    <head>
+        <title>My Drag-and-Drop Example</title>
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
     <div class="example-parent">
         <h1>To-do list</h1>
         <div class="example-origin">
-          To-do
-          <!-- TODO: Make clone counter variable to set unique IDs for new clones -->
-          <div
-            id="draggable-1"
-            class="nested-draggable"
-            draggable="true"
-            ondragstart="onDragStart(event);"
-            ondragend="onDragEnd(event);"
-            data-cloneondrag="true"
-            data-numclones=0
-          >
-            thing 1
+            To-do
+        <!-- TODO: Fix color changing; alpha down on drag -->
+        <!-- TODO: Don't allow draggables to have children (not eugenics) -->
+        <!-- Maybe let clones swap positions? -->
             <div
-                id="nested-drop-1"
-                class="nested-dropzone"
-                ondragover="onDragOver(event);"
-                ondrop="onDrop(event);"
+                id="draggable-1"
+                class="nested-draggable"
+                draggable="true"
+                ondragstart="onDragStart(event);"
+                ondragend="onDragEnd(event);"
+                data-cloneondrag="true"
+                data-numclones=0
             >
+                thing 1
+        <!-- TODO: Limit children to 1 for each nested dropzone -->
+                <div
+                    id="nested-drop-1"
+                    class="nested-dropzone"
+                    ondragover="onDragOver(event);"
+                    ondrop="onDrop(event);"
+                >
+                </div>
+                more text
+                <div
+                    id="nested-drop-2"
+                    class="nested-dropzone"
+                    ondragover="onDragOver(event);"
+                    ondrop="onDrop(event);"
+                >
+                </div>
             </div>
-          </div>
-          <div
-            id="draggable-2"
-            class="example-draggable"
-            draggable="true"
-            ondragstart="onDragStart(event);"
-            ondragend="onDragEnd(event);"
-            data-cloneondrag="true"
-            data-numclones=0
-          >
-            thing 2
-          </div>
-          <div
-            id="draggable-3"
-            class="example-draggable"
-            draggable="true"
-            ondragstart="onDragStart(event);"
-            ondragend="onDragEnd(event);"
-            data-cloneondrag="true"
-            data-numclones=0
-          >
-            thing 3
-          </div>
-          <div
-            id="draggable-4"
-            class="example-draggable"
-            draggable="true"
-            ondragstart="onDragStart(event);"
-            ondragend="onDragEnd(event);"
-            data-cloneondrag="true"
-            data-numclones=0
-          >
-            thing 4
-          </div>
+            <div
+                id="draggable-2"
+                class="example-draggable"
+                draggable="true"
+                ondragstart="onDragStart(event);"
+                ondragend="onDragEnd(event);"
+                data-cloneondrag="true"
+                data-numclones=0
+            >
+                thing 2
+            </div>
+            <div
+                id="draggable-3"
+                class="example-draggable"
+                draggable="true"
+                ondragstart="onDragStart(event);"
+                ondragend="onDragEnd(event);"
+                data-cloneondrag="true"
+                data-numclones=0
+            >
+                thing 3
+            </div>
+            <div
+                id="draggable-4"
+                class="example-draggable"
+                draggable="true"
+                ondragstart="onDragStart(event);"
+                ondragend="onDragEnd(event);"
+                data-cloneondrag="true"
+                data-numclones=0
+            >
+                thing 4
+            </div>
         </div>
       
         <div
-          class="example-dropzone"
-          ondragover="onDragOver(event);"
-          ondrop="onDrop(event);"
-        >
-          Done
-        </div>
-      </div>
-      <!-- TODO: Delete CLONE elements that go into trash-dropzone -->
-      <div
-            class="trash-dropzone"
+            class="example-dropzone"
             ondragover="onDragOver(event);"
             ondrop="onDrop(event);"
-            >
-          Delete
+        >
+            Done
         </div>
-      <script src="script.js"></script>
-  </body>
+    </div>
+    <div
+        class="trash-dropzone"
+        ondragover="onDragOver(event);"
+        ondrop="onDrop(event);"
+    >
+        Delete
+    </div>
+    <script src="script.js"></script>
+    </body>
 </html>

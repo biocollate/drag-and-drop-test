@@ -65,13 +65,18 @@ function onDrop(event) {
     var draggableElement = document.getElementById(id);
     var dropZone = event.target;
     var trash = dropZone.getAttribute("class") == "trash-dropzone";
+    var nested = dropZone.getAttribute("class") == "nested-dropzone";
+    var hasChild = dropZone.childElementCount > 0;
     console.log("DropZone:");
     console.log(dropZone);
     if (!draggableElement)
         throw new ElementNotFoundError(id);
     if (draggableElement.getAttribute('data-cloneondrag') == 'true') // root element
      {
-        if (!trash) {
+        if (!trash && (!nested || (nested && !hasChild))) 
+        // allow element to clone in IF this isnt the trash zone
+        // AND this is either a page dropzone or a childless nested dropzone
+        {
             var copyElement = draggableElement.cloneNode(true);
             copyElement.setAttribute('data-cloneondrag', 'false');
             copyElement.setAttribute('id', modifyID(draggableElement));
@@ -85,7 +90,7 @@ function onDrop(event) {
                 return;
             parent_1.removeChild(draggableElement);
         }
-        else
+        else if (!nested || (nested && !hasChild))
             dropZone.appendChild(draggableElement);
     }
     console.log(draggableElement);
