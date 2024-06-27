@@ -1,5 +1,5 @@
 .example-parent {
-    border: 2px solid #ffb700;
+    border: 2px solid #FFA500;
     color: black;
     display: flex;
     font-family: sans-serif;
@@ -12,8 +12,8 @@
     padding: 10px;
   }
   
-  .example-draggable {
-    background-color: #4AAE9B;
+  .simple-draggable {
+    background-color: #00FFFF;
     font-weight: normal;
     margin-bottom: 10px;
     margin-top: 10px;
@@ -21,7 +21,7 @@
   }
 
   .nested-draggable {
-    background-color: #4AAE9B;
+    background-color: #00FFFF;
     display: flex;
     gap: 1rem;
     font-weight: normal;
@@ -37,15 +37,15 @@
     min-height: 80%;
   }
   
-  .example-dropzone {
-    background-color: #6DB65B;
+  .canvas-dropzone {
+    background-color: #008000;
     flex-basis: 100%;
     flex-grow: 1;
     padding: 10px;
   }
 
   .trash-dropzone {
-    background-color: #ff5e01;
+    background-color: #FF0000;
     flex-basis: 100%;
     flex-grow: 1;
     padding: 10px;
